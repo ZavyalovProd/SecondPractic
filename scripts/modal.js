@@ -1,4 +1,4 @@
-export function openModal(card, titleElement, textElement) {
+export function openModal(card, title, description) {
     const page = document.querySelector("body");
     const template = page.querySelector("#modal_template");
     const modal = template.content.cloneNode(true).firstElementChild;
@@ -19,8 +19,8 @@ export function openModal(card, titleElement, textElement) {
     const descriptionInput = modal.querySelector(".edit_input_description");
     modal.querySelector(".modal_form").addEventListener("submit", (event) => {
       event.preventDefault();
-      titleElement.textContent = titleInput.value;
-      textElement.textContent = descriptionInput.value;
+      title.textContent = titleInput.value;
+      description.textContent = descriptionInput.value;
       closeModal();
     });
   }
